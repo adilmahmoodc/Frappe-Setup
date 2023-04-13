@@ -100,7 +100,7 @@ bench --site mysite.localhost install-app myapp
 ```bash 
 bench start
 ```
-- The the results in the [mysite.localhost:8000](mysite.localhost:8000).
+- The the results in the [mysite.localhost:8000](http://mysite.localhost:8000).
 
 
 ## Other Commands:
