@@ -6,7 +6,7 @@ we will do step by step to install frappe in our MacOS.
 
 
 ```bash
-1. python 3.6 or greater,  node 16.4 or greater,
+1. python 3.10+,  node 16.4+,
 
 2. install / download docker desktop
 
