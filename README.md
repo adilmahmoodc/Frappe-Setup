@@ -10,7 +10,8 @@ we will do step by step to install frappe in our MacOS.
 
 2. install / download docker desktop
 
-3. pip3 install frappe-bench
+3. bench cli install 
+   pip3 install frappe-bench
 
 4. sudo npm install -g yarn
 
@@ -71,11 +72,6 @@ bench set-config -g redis_socketio redis://redis-socketio:6379
 bench new-site mysite.localhost --mariadb-root-password 123 --admin-password admin --no-mariadb-socket
 ```
 
-- creating site with admin and mariadb passwords
-```bash
-bench new-site mysite.localhost --mariadb-root-password 123 --admin-password admin --no-mariadb-socket
-```
-
 ## Set bench developer mode on the new site
 - To develop a new app, the last step will be setting the site into developer mode.
 ```bash
@@ -127,9 +123,8 @@ bench setup redis
 ```
 
 ## CONFIGURATIONS FOR STREAMWORK PROJECT:
-
+#
 ```bash
-
 # after installing frappe-bench successfully
 # now we need to add application in it.
 bench get-app --branch version-14 https://github.com/StreamWork-io/streamwork-backend.git
@@ -141,7 +136,25 @@ bench --site <sitename> install-app streamwork
 git checkout dev  | git checkout production # for this you need to go into the streamwork application folder
 
 # migrate the streamwork app into our custom site
-
 bench --site <sitename> migrate
-
 ```
+
+## Important things which couldn't be forgetten
+
+#
+Set Default Email Address :  
+-
+- open frappe administrator panel => goto settings from sidebar => click "Email Account" link.
+- select gmail service and set password of your google "App Passwords"
+
+Set Social SignIn Keys :
+- 
+- get [client_id]() and [secret_id]() from [Google Console](https://console.cloud.google.com/apis/credentials).
+- open frappe administrator panel
+- search for ```social login keys```
+- set CLIENT_ID and SECRET_ID there. 
+- select service ```Google```.
+
+Allow Cross Site Requests for Custom Site :
+-
+- add ```"allow_cors": "*"``` in the ```site_config.json``` file.
