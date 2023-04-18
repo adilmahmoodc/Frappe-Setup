@@ -10,8 +10,7 @@ we will do step by step to install frappe in our MacOS.
 
 2. install / download docker desktop
 
-3. bench cli install 
-   pip3 install frappe-bench
+3. pip3 install frappe-bench
 
 4. sudo npm install -g yarn
 
@@ -124,5 +123,25 @@ bench setup config
 bench setup socketio
 bench setup redis
 
+
+```
+
+## CONFIGURATIONS FOR STREAMWORK PROJECT:
+
+```bash
+
+# after installing frappe-bench successfully
+# now we need to add application in it.
+bench get-app --branch version-14 https://github.com/StreamWork-io/streamwork-backend.git
+
+# after that we need to connect this application with our custom created site
+bench --site <sitename> install-app streamwork
+
+# then change the branch for backend to get latest developments
+git checkout dev  | git checkout production # for this you need to go into the streamwork application folder
+
+# migrate the streamwork app into our custom site
+
+bench --site <sitename> migrate
 
 ```
